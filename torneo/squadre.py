@@ -35,3 +35,14 @@
 #    - Se `gol_fatti == gol_subiti`: +1 pareggio
 #    - Se `gol_fatti < gol_subiti`: +1 sconfitta
 #    - Aggiorna gol segnati e subiti
+
+crea_squadra(nome, città, giocatori):
+    squadra = {
+        "nome": nome,
+        "città": città,
+        "giocatori": giocatori,
+        "vittorie": 0,
+        "pareggi": 0,
+        "sconfitte": 0,
+        "gol_segnati": 0
+    }

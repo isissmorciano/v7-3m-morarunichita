@@ -70,3 +70,8 @@ if __name__ == "__main__":
     print("Info partita 1: ")
     print("info_partita(p1)")
     
+    print("/nPartite giocate dall'Inter:")
+    print(giocate_per_squadra(lista_partite, "Inter"))
+
+    print("/nGol totali segnati dall'Inter: ")
+    print(gol_totali_squadra(lista_partite, "Inter"))
