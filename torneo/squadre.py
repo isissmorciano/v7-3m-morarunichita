@@ -85,4 +85,5 @@ if __name__ == "__main__":
     print("/nPunti totali: ")
     print(punti_squadra(mia_squadra))
 
-    print()
+    print("/nDifferenza reti:")
+    print(differenza_reti(mia_squadra))

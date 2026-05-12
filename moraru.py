@@ -55,3 +55,14 @@
 # - Napoli (Napoli) | 3 gol | 0V, 2P, 1S | Punti: 2
 # - Roma (Roma) | 0 gol | 0V, 0P, 2S | Punti: 0
 # - Lazio (Roma) | 1 gol | 0V, 1P, 1S | Punti: 1
+
+from torneo.squadre import crea_squadra, info_squadra, punti_squadra, differenza_reti, aggiorna_statistiche
+from torneo.partite import crea_partita, info_partita, giocate_per_squadra, gol_totali_squadra, applica_partita
+
+if __name__ == "__main__":
+    s1 = crea_squadra("Inter", "Milano", 23)
+    s2 = crea_squadra("Milan", "Milano", 22)
+    s3 = crea_squadra("Juventus", "Torino", 25)
+    s4 = crea_squadra("Roma", "Roma", 20)
+    s5 = crea_squadra("Napoli", "Napoli", 21)
+    s6 = crea_squadra("Lazio", "Roma", 19)
