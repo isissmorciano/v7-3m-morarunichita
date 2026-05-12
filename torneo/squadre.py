@@ -36,7 +36,7 @@
 #    - Se `gol_fatti < gol_subiti`: +1 sconfitta
 #    - Aggiorna gol segnati e subiti
 
-crea_squadra(nome, città, giocatori):
+def crea_squadra(nome, città, giocatori):
     squadra = {
         "nome": nome,
         "città": città,
@@ -44,5 +44,45 @@ crea_squadra(nome, città, giocatori):
         "vittorie": 0,
         "pareggi": 0,
         "sconfitte": 0,
-        "gol_segnati": 0
+        "gol_segnati": 0,
+        "gol_subiti": 0
     }
+    squadra["gol_subiti"] = 0
+    return squadra
+
+def info_squadra(squadra):
+    testo = f"{squadra["nome"]} ({squadra["città"]}) | {squadra["gol_segnati"]} gol | {squadra["vittorie"]} vittorie, {squadra["pareggi"]} pareggi, {squadra["sconfitte"]} sconfitte"
+    return testo
+
+def punti_squadra(squadra):
+    punti = (squadra["vittorie"] *3) + (squadra["pareggi"] *1)
+    return punti
+
+def differenza_reti(squadra):
+    differenza = squadra["gol_segnati"] - squadra["gol_subiti"]
+    return differenza
+
+def aggiorna_statistiche(squadra, gol_fatti, gol_subiti):
+    squadra["gol_segnati"] = squadra["gol_segnati"] + gol_fatti
+    squadra["gol_subiti"] = squadra["gol_subiti"] + gol_subiti
+
+    if gol_fatti > gol_subiti:
+        squadra["vittorie"] = squadra["vittorie"] + 1
+    elif gol_fatti == gol_subiti:
+        squadra["pareggi"] = squadra["pareggi"] + 1
+    else:
+        squadra["sconfitte"] = squadra["sconfitte"] + 1
+
+if __name__ == "__main__":
+    mia_squadra = crea_squadra("Inter", "Milano", 25)
+
+    aggiorna_statistiche(mia_squadra, 3, 1)
+    aggiorna_statistiche(mia_squadra, 1, 1)
+
+    print("Informazioni squadra:")
+    print(info_squadra(mia_squadra))
+
+    print("/nPunti totali: ")
+    print(punti_squadra(mia_squadra))
+
+    print()
